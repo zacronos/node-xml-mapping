@@ -18,16 +18,30 @@ With [npm](http://npmjs.org) do:
 ```javascript
 var xm = require('xml-mapping');
 
+// will not throw errors -- ignores them instead
 var json = xm.load('<key>value</key>');
 var xml  = xm.dump(json);
 
-console.log(xml,json);
+console.log(xml);
 console.log(json);
+
+try {
+    // throws parsing errors with line and column numbers
+    json = xm.load('<key>value', {throwErrors: true});
+} catch (err) {
+    console.log(err.toString())
+}
 ```
 
 Output:
 
-    <key>value</key> { key: { '$t': 'value' } }
+    <key>value</key>
+    { key: { '$t': 'value' } }
+    Error: Unexpected end of input
+    Line: 0
+    Column: 10
+    Char: null
+
 
 # Convention
 
