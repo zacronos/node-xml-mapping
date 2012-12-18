@@ -1,3 +1,9 @@
+# forked from https://github.com/lindory-project/node-xml-mapping
+
+This README.md file is for the original project.  As of right now, this fork exists only to generate a pull
+request and to facilitate merging in changes from the orignal project, and may or may not be maintained in
+the future.
+
 # xml2json and json2xml for NodeJS
 
 [![Build Status](https://secure.travis-ci.org/touv/node-xml-mapping.png?branch=master)](http://travis-ci.org/touv/node-xml-mapping)
