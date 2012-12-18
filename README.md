@@ -1,20 +1,17 @@
-# forked from https://github.com/lindory-project/node-xml-mapping
-
-This README.md file is for the original project.  As of right now, this fork exists only to generate a pull
-request and to facilitate merging in changes from the orignal project, and may or may not be maintained in
-the future.
-
 # xml2json and json2xml for NodeJS
 
 It's native javascript implementation of a bidirectional converter between XML and JS data structure (aka JSON).
 You can convert any type of XML documents in an Javascript data structure.
 You can also do the reverse, converting a Javascript data structure in XML String. XML is still valid.
 
+This is a fork of https://github.com/lindory-project/node-xml-mapping with improvements made to allow optional
+throwing of parser errors rather than the default of tossing them away.
+
 # Installation
 
 With [npm](http://npmjs.org) do:
 
-    $ npm install xml-mapping
+    $ npm install git+https://github.com/zacronos/node-xml-mapping.git
 
 
 # Usage
@@ -65,4 +62,11 @@ Alias of dump.
 
 # License
 
-[MIT/X11](./LICENSE)
+[MIT/X11](https://github.com/zacronos/node-xml-mapping/LICENSE)
+
+# TODO:
+
+* It would be nice allow passthrough of other options to SAX and XMLWriter.
+* The code could be more efficient by instantiating a single parser/writer and allowing it to be reused, rather than always starting from scratch.
+* It would be nice to expose SAX's incremental parsing / data buffering mechanism.
+* The existing code is not reversible for html-escaped characters; this should be fixed, though the issue may lie in the underlying XMLWriter code.
